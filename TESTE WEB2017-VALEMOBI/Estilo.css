@@ -1,5 +1,7 @@
 body{
 	background-color: #ffebcc;
+	min-width: 360px;
+	min-height: 640px;
 }
 .container-fluid{
 	background-color:#ffebcc;

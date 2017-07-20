@@ -10,6 +10,55 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/js/bootstrap.min.js">
 	<!--Chamando script de estilo css-->
 	<link rel="stylesheet" type="text/css" href="Estilo.css">
+	<script>
+		function validar(){
+			var Cod_merc =formNeg.cod.value;
+			var Tipo =formNeg.tipo.value;
+			var Nome =formNeg.nome.value;
+			var Qtd =formNeg.qtd.value;
+			var Prec =formNeg.prec.value;
+			var TN = formNeg.tn.value;
+
+			if(Cod_merc==""|| Cod_merc.length <=1){
+				alert("Preencha o campo Codigo da mercadoria!");
+				formNeg.cod.focus();
+				return false;
+			}
+				if(Tipo==""){
+				alert("Preencha o campo Tipo da mercadoria!");
+				formNeg.tipo.focus();
+				return false;
+			}
+				if(Nome==""){
+				alert("Preencha o campo Nome da mercadoria!");
+				formNeg.nome.focus();
+				return false;
+			}
+				if(Qtd==""){
+				alert("Preencha o campo Quantidade de mercadoria!");
+				formNeg.qtd.focus();
+				return false;
+			}
+				if(Prec=="" || Prec.indexOf('.')== -1){
+				alert("Preencha o campo Preço da mercadoria!");
+				formNeg.prec.focus();
+				return false;
+			}	
+				if(TN==""){
+				alert("Preencha o campo Tipo de negociação!");
+				formNeg.tn.focus();
+				return false;
+			}
+			    if(TN!="Compra" && TN!="Venda"){
+				alert("Retorne ao tipo de negociação , pois você digitou um nome invalido");
+				formNeg.tn.focus();
+				return false;
+			}
+			else{
+				alert("Os dados foram enviados com sucesso!");
+				return true;
+			}}
+	</script>
 </head>
 <body>
 	<!--Denominando o container como fluido-->
@@ -25,26 +74,26 @@
       <div class="container">
 	      <!--div de posicionamento e estilo do form-->
 	      <div class="FormGeral">
-	    	<form class="form-inline"> <!--Denominando o form em linha para chamar o script do bootstrap-->
+	    	<form name="formNeg" class="form-inline"> <!--Denominando o form em linha para chamar o script do bootstrap-->
 	      		<div class="form-group"><!--delimitando o form de negociação-->
 	      			<label for="mec" >Codigo da Mercadoria</label>
-	    				<input type="text" class="form-control" id="mec" placeholder="001">
+	    				<input type="text" class="form-control" name="cod" id="mec" placeholder="001(obs:2 digitos no min)">
 	    					<label for="tp" >Tipo da Mercadoria</label>
-	    						<input type="text" class="form-control" id="tp" placeholder="Software Bancario">
+	    						<input type="text" class="form-control" id="tp" name="tipo" placeholder="Software Bancario">
 	    							<label for="nom" >Nome</label>
-	    								<input type="text" class="form-control" id="nom" placeholder="Asset System ...">
+	    								<input type="text" class="form-control" id="nom" name="nome" placeholder="Asset System ...">
 		    							<div class="SecPart">
 		      									<label for="qtd" >Quantidade</label>
-		 											<input type="number" class="form-control" id="qtd" placeholder="200 ">
+		 											<input type="number" class="form-control" name="qtd" id="qtd" placeholder="200 ">
 		      											<label for="prec" >Preço</label>
-		 													<input type="text" class="form-control" id="prec" placeholder="200.00 ...">
+		 													<input type="text" class="form-control" id="prec" name ="prec" placeholder="200.00 ..." >
 		      													<label for="tN" >Tipo de negocio</label>
-		 															<input type="email" class="form-control" id="tN" placeholder="Compra ou Venda">
+		 															<input type="text" class="form-control" name="tn" id="tN" placeholder="Compra ou Venda" >
 		 									</div>
 	 			</div>
 		 														<div class="envio">
 			      													<div class="col-xs-12 col-sm-1-block">
-			      														<center><button type="button"  class="btn btn-warning btn-block">Negociar agora!</button></center>
+			      														<center><button type="submit" onclick="return validar()" class="btn btn-warning btn-block">Negociar agora!</button></center>
 			      													</div>
 			      												</div>	
 	      	</form>
