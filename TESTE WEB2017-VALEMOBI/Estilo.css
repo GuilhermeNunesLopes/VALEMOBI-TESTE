@@ -1,0 +1,43 @@
+body{
+	background-color: #ffebcc;
+}
+.container-fluid{
+	background-color:#ffebcc;
+}
+.img-responsive{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	max-width: 60px;
+	min-width: 20px;
+}
+.row{
+background-color: #Ff9900;
+}
+.Tcor{
+	color: white;
+}
+.V{
+	color:#666666;
+	font-family: Times;
+	font-style: italic;
+	font-style: bold;
+	font-size: 28px;
+}
+.container{
+	background-color: #Ffcc80;
+}.form-inline{
+	margin:auto 100px;
+}.form-horizontal{
+	margin-top:50px;
+}.FormGeral{
+	padding-top:10px;
+}.SecPart{
+	width:200px;
+	margin-top:20px;
+	margin-left:150px;
+}.envio{
+	margin-top:60px;
+}
+.form-group{
+	border:1px solid #E68a00;
+}

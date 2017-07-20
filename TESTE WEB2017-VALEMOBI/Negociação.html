@@ -2,12 +2,54 @@
 <html lang="pt-br">
 <head>
 	<title>Negociação de Mercadoria</title>
+	<meta charset="utf-8">
 	<!--Dispositivos -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- chamando as bibliotecas bootstrap-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/js/bootstrap.min.js">
+	<!--Chamando script de estilo css-->
+	<link rel="stylesheet" type="text/css" href="Estilo.css">
 </head>
 <body>
-	<div class="container">
-
+	<!--Denominando o container como fluido-->
+	<div class="container-fluid">
+     
+      	<img width="60px"  src="img/logo.png" alt="valemobi-negociação" class="img-responsive">
+      	 <div class="row">
+	      <div class="col-xs-12 col-sm-1-block">
+	      	<center><label class="Tcor"><font size="5px">Negocie com a <span class="V">Valemobi</span> neste 2017</font></label></center>
+	      </div>
+      </div>
+      <!--Denominando o container principal-->
+      <div class="container">
+	      <!--div de posicionamento e estilo do form-->
+	      <div class="FormGeral">
+	    	<form class="form-inline"> <!--Denominando o form em linha para chamar o script do bootstrap-->
+	      		<div class="form-group"><!--delimitando o form de negociação-->
+	      			<label for="mec" >Codigo da Mercadoria</label>
+	    				<input type="text" class="form-control" id="mec" placeholder="001">
+	    					<label for="tp" >Tipo da Mercadoria</label>
+	    						<input type="text" class="form-control" id="tp" placeholder="Software Bancario">
+	    							<label for="nom" >Nome</label>
+	    								<input type="text" class="form-control" id="nom" placeholder="Asset System ...">
+		    							<div class="SecPart">
+		      									<label for="qtd" >Quantidade</label>
+		 											<input type="number" class="form-control" id="qtd" placeholder="200 ">
+		      											<label for="prec" >Preço</label>
+		 													<input type="text" class="form-control" id="prec" placeholder="200.00 ...">
+		      													<label for="tN" >Tipo de negocio</label>
+		 															<input type="email" class="form-control" id="tN" placeholder="Compra ou Venda">
+		 									</div>
+	 			</div>
+		 														<div class="envio">
+			      													<div class="col-xs-12 col-sm-1-block">
+			      														<center><button type="button"  class="btn btn-warning btn-block">Negociar agora!</button></center>
+			      													</div>
+			      												</div>	
+	      	</form>
+	      	</div>
+      </div><!--fechando o container principal-->			
 	</div>
 </body>
 </html>
