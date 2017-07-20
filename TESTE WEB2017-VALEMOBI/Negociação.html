@@ -74,7 +74,7 @@
       <div class="container">
 	      <!--div de posicionamento e estilo do form-->
 	      <div class="FormGeral">
-	    	<form name="formNeg" class="form-inline"> <!--Denominando o form em linha para chamar o script do bootstrap-->
+	    	<form name="formNeg" class="form-horizontal"> <!--Denominando o form em linha para chamar o script do bootstrap-->
 	      		<div class="form-group"><!--delimitando o form de negociação-->
 	      			<label for="mec" >Codigo da Mercadoria</label>
 	    				<input type="text" class="form-control" name="cod" id="mec" placeholder="001(obs:2 digitos no min)">
@@ -82,19 +82,19 @@
 	    						<input type="text" class="form-control" id="tp" name="tipo" placeholder="Software Bancario">
 	    							<label for="nom" >Nome</label>
 	    								<input type="text" class="form-control" id="nom" name="nome" placeholder="Asset System ...">
-		    							<div class="SecPart">
+		    							
 		      									<label for="qtd" >Quantidade</label>
 		 											<input type="number" class="form-control" name="qtd" id="qtd" placeholder="200 ">
 		      											<label for="prec" >Preço</label>
 		 													<input type="text" class="form-control" id="prec" name ="prec" placeholder="200.00 ..." >
 		      													<label for="tN" >Tipo de negocio</label>
 		 															<input type="text" class="form-control" name="tn" id="tN" placeholder="Compra ou Venda" >
-		 									</div>
+		 									
 	 			</div>
 		 														<div class="envio">
-			      													<div class="col-xs-12 col-sm-1-block">
-			      														<center><button type="submit" onclick="return validar()" class="btn btn-warning btn-block">Negociar agora!</button></center>
-			      													</div>
+			      												
+			      													<button type="submit" onclick="return validar()" class="btn btn-warning btn-block">Negociar agora!</button>
+	
 			      												</div>	
 	      	</form>
 	      	</div>
