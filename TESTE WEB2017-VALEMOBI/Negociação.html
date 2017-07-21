@@ -11,6 +11,35 @@
 	<!--Chamando script de estilo css-->
 	<link rel="stylesheet" type="text/css" href="Estilo.css">
 	<script>
+	/*validar para digitar somente texto*/
+	function letra(e)
+	{
+			var Tipo =formNeg.tipo.value;
+			var Nome =formNeg.nome.value;
+			var TN = formNeg.tn.value;
+
+		var expressao;
+
+		expressao = /[a-zA-Z]/;
+
+		if(expressao.test(String.fromCharCode(e.keyCode)))
+		{
+			return true;
+		}
+		else
+		{
+			alert("Você não digitou somente letras nos campos: \n Tipo de mercadoria\nNome ou Tipo de Negocio\n Obs:Pode estar faltando as 3/4 letras minimas necessarias \n Por favor retorne a um desses campos!");
+			return false;
+		}
+		if(Tipo==""){
+		formNeg.tipo.focus();
+		}
+		if(Nome==""){
+			formNeg.nome.focus();
+		}if(Tn==""){
+		formNeg.tn.focus();
+		}
+	}
 		function validar(){
 			var Cod_merc =formNeg.cod.value;
 			var Tipo =formNeg.tipo.value;
@@ -18,32 +47,52 @@
 			var Qtd =formNeg.qtd.value;
 			var Prec =formNeg.prec.value;
 			var TN = formNeg.tn.value;
+    		var num = parseInt(Cod_merc);
+    		var nump = parseFloat(prec);
 
+ 
+         
+    		
+/*validando para ver se o codigo da mercadoria esta vazio e se o usuario digitou mais de 1 digito*/
 			if(Cod_merc==""|| Cod_merc.length <=1){
-				alert("Preencha o campo Codigo da mercadoria!");
+				alert("Preencha o campo Codigo da mercadoria , ele precisa ter no minimo 2 digitos!");
 				formNeg.cod.focus();
 				return false;
 			}
-				if(Tipo==""){
-				alert("Preencha o campo Tipo da mercadoria!");
+			/*validando o codigo da mercadoria para ver se só foram digitados numeros.*/
+			 if(isNaN(num)){
+       		 alert("O valor digitado no campo Codigo da mercadoria não é numero .\nPor favor digite um numero ");
+        		formNeg.Cod_merc.focus();
+        		return false;
+      		}
+      		/*Validando o tipo para ver se ele esta preenchido e o tipo de produto deve conter no minimo 4 letras*/
+				if(Tipo==""|| Tipo.length <=3){
+				alert("Preencha o campo Tipo da mercadoria! \n Os produtos devem ter no minimo 4 letras");
 				formNeg.tipo.focus();
 				return false;
+				
 			}
-				if(Nome==""){
-				alert("Preencha o campo Nome da mercadoria!");
+			/*Validando o nome para ver se ele esta preenchido*/
+				if(Nome=="" || Nome.length <=2){
+				alert("Preencha o campo Nome da mercadoria! \n Ele deve conter no minimo 3 letras");
 				formNeg.nome.focus();
 				return false;
-			}
+			}/*Validando a quantidade para ver se ele esta preenchido*/
 				if(Qtd==""){
 				alert("Preencha o campo Quantidade de mercadoria!");
 				formNeg.qtd.focus();
 				return false;
-			}
-				if(Prec=="" || Prec.indexOf('.')== -1){
-				alert("Preencha o campo Preço da mercadoria!");
+			}/*Validando a quantidade para ver se ele esta preenchido e se ele digitou ao menos 1 ponto e preço tem que ter no minimo 3 digitos */
+				if(Prec=="" || Prec.indexOf('.')== -1 || Prec.length <=2 ){
+				alert("Preencha o campo Preço da mercadoria\nLEMBRE-SE QUE DEVE CONTER UM PONTO ENTRE OS DIGITOS . \n EXEMPLO=200.00! \n É NECESSARIO TER NO MINIMO 3 DIGITOS");
 				formNeg.prec.focus();
 				return false;
-			}	
+			}	/*validando o preço para ver se só foram digitados numeros e se existe ponto..*/
+			 if(isNaN(nump) || Prec.indexOf('.')==-1){
+       		 alert("O valor digitado no campo Preço não é numero .\nPor favor digite um numero \n Lembre-se que é preciso ter o ponto ");
+        	formNeg.prec.focus();
+        	return false;
+       		 }		
 				if(TN==""){
 				alert("Preencha o campo Tipo de negociação!");
 				formNeg.tn.focus();
@@ -57,7 +106,10 @@
 			else{
 				alert("Os dados foram enviados com sucesso!");
 				return true;
-			}}
+			}
+
+      
+     }
 	</script>
 </head>
 <body>
@@ -77,18 +129,17 @@
 	    	<form name="formNeg" class="form-horizontal"> <!--Denominando o form em linha para chamar o script do bootstrap-->
 	      		<div class="form-group"><!--delimitando o form de negociação-->
 	      			<label for="mec" >Codigo da Mercadoria</label>
-	    				<input type="text" class="form-control" name="cod" id="mec" placeholder="001(obs:2 digitos no min)">
+	    				<input type="text" class="form-control" name="cod" id="mec" maxlength="4" placeholder="001(obs:2 digitos no min)">
 	    					<label for="tp" >Tipo da Mercadoria</label>
-	    						<input type="text" class="form-control" id="tp" name="tipo" placeholder="Software Bancario">
+	    						<input type="text" class="form-control" maxlength="20"  onKeypress="return letra(event)" id="tp" name="tipo" placeholder="Software Bancario">
 	    							<label for="nom" >Nome</label>
-	    								<input type="text" class="form-control" id="nom" name="nome" placeholder="Asset System ...">
-		    							
+	    								<input type="text" class="form-control" id="nom"  onKeypress="return letra(event)" name="nome" placeholder="Asset System ...">
 		      									<label for="qtd" >Quantidade</label>
-		 											<input type="number" class="form-control" name="qtd" id="qtd" placeholder="200 ">
+		 											<input type="number" class="form-control" maxlength="4" name="qtd" id="qtd" placeholder="200 ">
 		      											<label for="prec" >Preço</label>
-		 													<input type="text" class="form-control" id="prec" name ="prec" placeholder="200.00 ..." >
+		 													<input type="text" class="form-control" id="prec"  maxlength="15" name ="prec" placeholder="200.00 ..." pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" >
 		      													<label for="tN" >Tipo de negocio</label>
-		 															<input type="text" class="form-control" name="tn" id="tN" placeholder="Compra ou Venda" >
+		 															<input type="text" class="form-control" name="tn" maxlength="6" onKeypress="return letra(event)" id="tN" placeholder="Compra ou Venda" >
 		 									
 	 			</div>
 		 														<div class="envio">
@@ -97,8 +148,14 @@
 	
 			      												</div>	
 	      	</form>
-	      	</div>
+	      </div>
       </div><!--fechando o container principal-->			
+	</div>
+	<div class="rodape">
+		<div class="Ali">
+		<center><h3>Desenvolvido por Guilherme Nunes Lopes<h3></center>
+		<center><h3>contato:guilherme.lopes68@etec.sp.gov.br</h3></center>
+		</div>
 	</div>
 </body>
 </html>

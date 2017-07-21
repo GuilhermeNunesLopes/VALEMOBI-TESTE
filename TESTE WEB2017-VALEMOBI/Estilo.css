@@ -1,11 +1,12 @@
 body{
+
 	background-color: #ffebcc;
-	min-width: 750px;
+	min-width: 600px;
 	
 }
 .container-fluid{
 	background-color:#ffebcc;
-	min-width: 750px;
+	min-width: 700px;
 }
 .img-responsive{
 	padding-top: 5px;
@@ -29,28 +30,49 @@ background-color: #Ff9900;
 	font-size: 28px;
 }
 .container{
+	height:500px;
 	background-color: #Ffcc80;
 	min-width: 750px;
-}.form-inline{
+	min-height:400px;
+}/*.form-inline{
 	margin:auto 100px;
-}.form-horizontal{
-	margin-top:50px;
-    margin-left:200px;   
-}.FormGeral{
-	padding-top:10px;
-	margin:auto 200px;
+}*/
+.form-horizontal{
 
-}.SecPart{
-	width:200px;
-	margin-top:20px;
-	margin-left:150px;
-}.envio{
+    margin:auto;  
+}.FormGeral{
+	width:300px;
+	position:absolute;
+	top:180px;
+	left:40%;
+
+}
+.envio{
 	width:320px;
+	height:10px;
     min-height:320px;
 	margin-left:-15px;
 }
 .form-group{
 	width:320px;
 	border:1px solid #E68a00;
-	margin: auto 10px;
+
 }
+.rodape{
+	width:100%;
+	height:100px;
+	min-width:200px;
+	background-color: #E67300;
+	border-top:4px solid #666666;
+
+}h3{
+
+	font-family: times;
+	font-size: 15px;
+	color:white;
+}/*.Ali{
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 40%;
+
+}*/
