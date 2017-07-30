@@ -1,7 +1,6 @@
 body{
 
 	background-color: #ffebcc;
-	min-width: 600px;
 	
 }
 .container-fluid{
@@ -26,7 +25,7 @@ background-color: #Ff9900;
 	color:#666666;
 	font-family: Times;
 	font-style: italic;
-	font-style: bold;
+	font-style: bold;	
 	font-size: 28px;
 }
 .container{
@@ -50,7 +49,7 @@ background-color: #Ff9900;
 .envio{
 	width:320px;
 	height:10px;
-    min-height:320px;
+    min-height:20px;
 	margin-left:-15px;
 }
 .form-group{
@@ -68,7 +67,7 @@ background-color: #Ff9900;
 }h3{
 
 	font-family: times;
-	font-size: 15px;
+	font-size: 15px;	
 	color:white;
 }/*.Ali{
 	position: absolute;
